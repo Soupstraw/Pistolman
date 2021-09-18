@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+
+[node name="Control" type="ColorRect"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+input_pass_on_modal_close_click = false
+color = Color( 0, 0, 0, 0.392157 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 352.0
+margin_top = 250.0
+margin_right = 672.0
+margin_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_right = 82.0
+margin_bottom = 100.0
+
+[node name="Continue" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_right = 82.0
+margin_bottom = 20.0
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 82.0
+margin_bottom = 44.0
+text = "New Game"
+
+[node name="Quit" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 82.0
+margin_bottom = 68.0
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_left = 86.0
+margin_right = 320.0
+margin_bottom = 100.0
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 234.0
+margin_bottom = 24.0
+text = "Move relative to facing direction"
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 28.0
+margin_right = 234.0
+margin_bottom = 42.0
+text = "Music Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 46.0
+margin_right = 234.0
+margin_bottom = 62.0
+min_value = -20.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 66.0
+margin_right = 234.0
+margin_bottom = 80.0
+text = "Sound Effects Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 84.0
+margin_right = 234.0
+margin_bottom = 100.0
+min_value = -20.0
+max_value = 0.0

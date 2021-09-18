@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sounds/calm.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/action.wav" type="AudioStream" id=2]
+[ext_resource path="res://MusicController.gd" type="Script" id=3]
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Calm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Action" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true

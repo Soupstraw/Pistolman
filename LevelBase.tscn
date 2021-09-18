@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TopDownCamera.gd" type="Script" id=1]
+[ext_resource path="res://new_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=6]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Navigation2D"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+script = ExtResource( 1 )
+follow_target = NodePath("../Player")
+move_speed = 1000.0
+bias = 0.2
+
+[node name="Ammo" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 32, 16 )
+moveSpeed = 4000.0
+attack_delay = 0.0
+pistol_shake_multiplier = 30.0
+camera = NodePath("../Camera2D")
+magazines_path = NodePath("../CanvasLayer/Control/Control/Viewport/Node2D")
+
+[node name="PatrolPoints" type="Node2D" parent="."]
+
+[editable path="CanvasLayer/Control"]
+[editable path="CanvasLayer/Control/Control/Viewport"]
+[editable path="CanvasLayer/Control/Control/Viewport/Node2D"]

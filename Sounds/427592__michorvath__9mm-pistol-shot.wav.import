@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/427592__michorvath__9mm-pistol-shot.wav-f041c6cefd32b4e0d4306be250f88291.sample"
+
+[deps]
+
+source_file="res://Sounds/427592__michorvath__9mm-pistol-shot.wav"
+dest_files=[ "res://.import/427592__michorvath__9mm-pistol-shot.wav-f041c6cefd32b4e0d4306be250f88291.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

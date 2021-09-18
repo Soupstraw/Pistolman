@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/100804__fr3yr__glock19-reload.wav-86e434b94f8f5d6d401470f0fc91168d.sample"
+
+[deps]
+
+source_file="res://Sounds/100804__fr3yr__glock19-reload.wav"
+dest_files=[ "res://.import/100804__fr3yr__glock19-reload.wav-86e434b94f8f5d6d401470f0fc91168d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
