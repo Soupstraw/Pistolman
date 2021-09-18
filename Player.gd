@@ -3,7 +3,6 @@ extends "res://Unit.gd"
 export(float) var moveSpeed = 20
 export(float) var attack_delay = 1
 export(float) var pistol_shake_multiplier = 0.1
-export(float) var gunshot_range = 250
 export(NodePath) var camera
 export(NodePath) var magazines_path
 
@@ -26,10 +25,8 @@ func _input(event):
 	if event.is_action_pressed("Fire"):
 		if magazines.fire_bullet():
 			_self.fire_pistol()
+			_self.alert_enemies(true)
 			camera_node.shake((_self.global_position - _self.get_global_mouse_position()).normalized() * pistol_shake_multiplier);
-			for e in get_tree().get_nodes_in_group("Unit"):
-				if e.global_position.distance_to(global_position) < gunshot_range:
-					e.goto_chasing(true)
 		else:
 			GameLogic.play_audio("res://Sounds/467183__sophia-c__pistol-dry-fire-bersa-bp9cc-9x19.wav")
 	elif event.is_action_pressed("Melee") and not meleeing:

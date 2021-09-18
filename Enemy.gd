@@ -69,6 +69,8 @@ func goto_chasing(omniscient = false):
 	current_speed = chase_speed
 	if omniscient:
 		last_seen = player.global_position
+	elif not last_seen:
+		last_seen = global_position
 	path = navigation.get_simple_path(_self.global_position, last_seen, false)
 	path_ptr = 0
 
@@ -103,6 +105,7 @@ func _process(delta):
 		$pistol.rotate(sin(inac_phase + inac_speed * OS.get_ticks_msec()) * deg2rad(inaccuracy))
 		if next_shot <= 0:
 			_self.fire_pistol()
+			_self.alert_enemies()
 			next_shot = fire_cooldown
 	elif ai_state == AI_STATE.CHASING:
 		chasing_time += delta

@@ -4,9 +4,11 @@ class_name Unit
 
 signal on_hit
 
+export(int) var hitpoints = 3
+export(float) var gunshot_range = 250
+
 var bullet = load("res://Bullet.tscn")
 var gunshot_sfx = load("res://Sounds/427592__michorvath__9mm-pistol-shot.wav")
-export(int) var hitpoints = 3
 var alive = true
 
 # Called when the node enters the scene tree for the first time.
@@ -45,4 +47,10 @@ func die():
 	alive = false
 	set_collision_layer(0)
 	set_collision_mask(0)
+
+func alert_enemies():
+	for e in get_tree().get_nodes_in_group("Unit"):
+		if e == self: continue
+		if e.global_position.distance_to(global_position) < gunshot_range:
+			e.goto_chasing()
 
