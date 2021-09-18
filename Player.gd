@@ -23,7 +23,7 @@ func _ready():
 func _input(event):
 	if GameLogic.is_game_over():
 		return
-	if event.is_action_pressed("Fire") and not meleeing:
+	if event.is_action_pressed("Fire"):
 		if magazines.fire_bullet():
 			_self.fire_pistol()
 			camera_node.shake((_self.global_position - _self.get_global_mouse_position()).normalized() * pistol_shake_multiplier);
